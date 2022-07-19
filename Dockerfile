@@ -2,11 +2,11 @@
 FROM ubuntu
 RUN chmod 700 .
 #Create container to store file in
-RUN mkdir doc-conatiner 
+RUN mkdir doc-container 
 # source then destination of container in docker if I have one
-COPY . /functionfibonnaci/doc-conatiner
+COPY ./functionfibonnaci.sh /doc-container
 #when conatiner starts what is the executable
-ENTRYPOINT ["/bin/bash", "/functionfibonnaci/doc-conatiner/functionfibonnaci.sh"]
+ENTRYPOINT ["/bin/bash", "/doc-container/functionfibonnaci.sh"]
 #OVERCOME PERMISSION DEININED
 #Build application
 # Run make ./functionfibonnaci/doc-conatiner
